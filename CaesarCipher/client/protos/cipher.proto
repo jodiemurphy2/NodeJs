@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package cipher;
+
+service CipherService {
+    rpc encrypt(CipherRequest) returns (CipherResponse) {}
+}
+
+message CipherRequest {
+    string input = 1;
+    uint32 shift = 2;
+}
+
+message CipherResponse{
+    string result = 1;
+    string message = 2;
+}
+
